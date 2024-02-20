@@ -8,9 +8,9 @@ const useTechnologies = () => {
     const response = await fetch(
       "https://16glg8r950.execute-api.us-east-1.amazonaws.com/production/skills",
       {
-        // headers: {
-        //   "x-api-key": "bbHS91P3Gh8MFhKl7w0vZ6nC55vyKER296o7eVNM",
-        // },
+        headers: {
+          "x-api-key": process.env.API_KEY,
+        },
       }
     );
     const technologies = (await response.json()) as Card[];
