@@ -1,0 +1,153 @@
+.title {
+  padding: 0 20px;
+  margin: 20px 0px;
+  color: var(--highlight-color);
+}
+
+/* .footer_container {
+  display: flex;
+} */
+
+.contact_container {
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+
+.email_container {
+  display: flex; 
+  flex-direction: column; 
+}
+
+.email_phone_container {
+  width: 100%;
+  gap: 12px;
+}
+
+.email_phone_container_phone {
+  display: flex;
+  gap: 10px;
+}
+
+.contact_hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact_hover:hover {
+  text-decoration: underline;
+}
+
+.contact_icons {
+  display: flex;
+  gap: 20px;
+}
+
+.message_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.message_container:focus {
+  box-shadow: inset 0 -1px 0 #ddd;
+}
+
+.email_phone_container {
+  display: flex;
+  margin: 10px 0;
+}
+
+.form_label {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.email_input {
+  color: #000;
+  padding: 18px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* .email_input::placeholder {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  color: #999999;
+  padding: 18px;
+} */
+
+.message {
+  color: #fff;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.message label {
+  margin-bottom: 10px;
+}
+
+.message_submit_container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  padding-inline: 20px;
+}
+
+.textarea {
+  color: #000;
+  resize: none;
+  height: 200px;
+  border-radius: 4px;
+  padding: 18px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+/* .textarea::placeholder {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  color: #999999;
+} */
+
+.submit_btn {
+  padding: 10px 30px;
+  background-color: var(--highlight-color);
+  margin-top: 15px;
+  border-radius: 4px;
+  text-align: center;
+  transition: 0.4s;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  margin-left: auto;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.submit_btn:hover {
+  /* background-color: lighten(var(--highlight-color), 10%) ; */
+  filter: brightness(110%);
+}
+
+.toastify_content {
+  color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  .email_phone_container_phone {
+    gap: 3px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .contact_container {
+    display: flex;
+    margin-top: 20px;
+    align-items: flex-start;
+  }
+}

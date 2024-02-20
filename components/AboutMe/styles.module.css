@@ -1,0 +1,40 @@
+.main {
+  margin: 20px 0 40px;
+  background: rgba(255,255,255,0.08);
+  padding: 24px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.title {
+  color: var(--highlight-color);
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.image {
+  border-radius: 8px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.paragraph {
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 600px) {
+  .title  {
+    text-align: left;
+  }
+  .main {
+    text-align: left;
+  }
+  .image {
+    margin-bottom: 0;
+  }
+  .image_paragraph_container {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}

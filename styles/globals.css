@@ -1,0 +1,67 @@
+:root {
+  --primary-color: #0f182c;
+  --highlight-color: #398e9a;
+  --title-color: --highlight-color;
+  --secondary-color: #15223f;
+  --tertiary-color: #546484;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+h2 {
+  font-size: 30px;
+  text-align: left;
+}
+
+.app-container {
+  display: block;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 20px;
+  
+}
+
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+@media only screen and (max-width: 900px) {
+  .app-container {
+    grid-gap: 0px;
+    gap: 0px;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    position: static;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .app-container {
+    font-size: 16px;
+    grid-gap: 0px;
+    gap: 0px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .app-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 150px;
+  }
+}
