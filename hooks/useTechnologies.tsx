@@ -1,8 +1,25 @@
 import { useEffect, useState } from "react";
 import { Card } from "../model/card";
+import { DynamoDBResponse } from "../model/card";
+
+interface ApiGatewayResponse {
+  statusCode: string;
+  body: string;
+}
 
 const useTechnologies = () => {
   const [technologies, setTechnologies] = useState<Card[]>([]);
+
+  const convertToCard = (data: DynamoDBResponse[]): Card[] => {
+    return data.map((item) => ({
+      _id: { $oid: item.ID.S },
+      title: item.title.S,
+      items: item.items.L.map((subItem) => ({
+        name: subItem.M.name.S,
+        icon: subItem.M.icon.S,
+      })),
+    }));
+  };
 
   const fetchTechnologies = async () => {
     const response = await fetch(
@@ -13,9 +30,10 @@ const useTechnologies = () => {
         },
       }
     );
-    const technologies = (await response.json()) as Card[];
-    console.log(technologies)
-    return [];
+
+    const technologies = (await response.json()) as ApiGatewayResponse;
+    const cards = convertToCard(JSON.parse(technologies.body));
+    return cards;
   };
 
   useEffect(() => {

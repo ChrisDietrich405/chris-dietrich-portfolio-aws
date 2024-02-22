@@ -5,3 +5,10 @@ export interface Card {
   title: string;
   items: Item[];
 }
+
+export interface DynamoDBResponse {
+  ID: { S: string };
+  items: { L: { M: { name: { S: string }; icon: { S: string } } }[] };
+  title: { S: string };
+}
+
