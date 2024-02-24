@@ -12,9 +12,9 @@ export interface DynamoDBResponse {
   ID: { S: string };
   title: { S: string };
   image: { S: string };
-  technologies: { SS: string[] };
+  technologies: { L: { S: string }[] };
   github_link: { S: string };
   link: { S: string };
-  libraries: { SS: string[] };
-  backend: { SS: string[] };
+  libraries: { L: { S: string }[] };
+  backend: { L: { S: string }[] };
 }

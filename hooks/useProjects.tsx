@@ -15,11 +15,11 @@ const useProjects = () => {
       _id: { $oid: item.ID.S },
       title: item.title.S,
       image: item.image.S,
-      technologies: item.technologies.SS,
+      technologies: item.technologies.L.map((subItem) => subItem.S),
       github_link: item.github_link.S,
       link: item.link.S,
-      libraries: item.libraries.SS,
-      backend: item.backend.SS,
+      libraries: item.libraries.L.map((subItem) => subItem.S),
+      backend: item.backend.L.map((subItem) => subItem.S),
     }));
   };
 
@@ -33,10 +33,9 @@ const useProjects = () => {
       }
     );
 
-    console.log(response);
-
     const projectsResponse = (await response.json()) as ApiGatewayResponse;
     const projectsArray = convertToCard(JSON.parse(projectsResponse.body));
+    console.log(projectsArray);
     return projectsArray;
   };
 
